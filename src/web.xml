@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE web-app
+    PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+    "http://java.sun.com/dtd/web-app_2_3.dtd">
+
+<web-app>
+
+	<!-- Default page to serve -->
+	<welcome-file-list>
+		<welcome-file>Login.html</welcome-file>
+	</welcome-file-list>
+
+	<!-- Servlets -->
+	<servlet>
+		<servlet-name>greetServlet</servlet-name>
+		<servlet-class>com.wissen.loginservapp.server.GreetingServiceImpl</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>greetServlet</servlet-name>
+		<url-pattern>/greet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>UpdateServlet</servlet-name>
+		<servlet-class>com.wissen.loginservapp.server.UpdateServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>UpdateServlet</servlet-name>
+		<url-pattern>/UpdateServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>LoginAvail</servlet-name>
+		<servlet-class>com.wissen.loginservapp.server.LoginAvail</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>LoginAvail</servlet-name>
+		<url-pattern>/LoginAvail</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>LoginValServlet</servlet-name>
+		<servlet-class>com.wissen.loginservapp.server.LoginValServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>LoginValServlet</servlet-name>
+		<url-pattern>/LoginValServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>DeleteServlet</servlet-name>
+		<servlet-class>com.wissen.loginservapp.server.DeleteServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>DeleteServlet</servlet-name>
+		<url-pattern>/DeleteServlet</url-pattern>
+	</servlet-mapping>
+
+
+</web-app>

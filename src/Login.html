@@ -1,0 +1,75 @@
+<html>
+<head>
+<Title>Login</Title>
+
+<script type="text/javascript" src="jquery-1.3.2.js"></script>
+<script type="text/javascript" src="jquery.validate.js"></script>
+
+<script>                                 
+/*
+ $(document).ready(function() {     
+     $("#MainForm").validate();
+ });
+ */
+ $(document).ready(function() {
+     $.validator.addMethod("noSpecialChars", function(value, element) {
+                   return this.optional(element) || /^[a-z0-9\_\.]+$/.test(value);
+           }, "Username must contain only letters, numbers, underscore or dot.");
+              
+          
+     $("#LoginForm").validate();
+
+  
+
+ });
+ $(document).ready(function() {
+	 $("#submit").click(function() {
+         //alert("value "+document.val.login_name.value);
+         //$("#login_name").val()
+             $.post("http://localhost:8090/LoginServApp/LoginValServlet",{log_name: $("#log_name").val() , pass: $("#pass").val() },function(xmlHttp) {
+                 // xmlHttp is a XMLHttpRquest object
+                 $("#divShow").html(xmlHttp);
+          });
+      });
+
+     });              
+
+ 
+  </script>
+
+
+
+
+
+</head>
+<body>
+<div style="border: 5px solid aqua" id="divShow" name="divShow"><br>
+<form id="LoginForm" method="post"><br>
+<h1>Getting started with BoreMail.com</h1>
+<table>
+	<tr height=50>
+		<td>Login Name:</td>
+		<td><input type="text" class="required" name="log_name"
+			id="log_name" size="30" value=""></td>
+	</tr>
+
+	<tr height=50>
+		<td>Password:</td>
+		<td><input class="required" type="password" name="pass" id="pass"
+			size="30" value="" /></td>
+	</tr>
+
+	<td><input type="button" name="submit" id="submit" value="Login"><4/td>
+
+	<td><a href="http://localhost:8090/LoginServApp/SubmitForm.html">Sign
+	Up Now</a></td>
+	</tr>
+
+</table>
+</form>
+</div>
+</body>
+
+</html>
+
+
